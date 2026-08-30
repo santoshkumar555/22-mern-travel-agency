@@ -15,7 +15,7 @@ export const handleWebhook = async (req, res) => {
             .digest("hex");
 
         if (signature !== expectedSignature) {
-            return resa
+            return res
                 .status(400)
                 .json({ success: false, message: "Invalid webhook signature" });
         }
