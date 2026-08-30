@@ -4,6 +4,10 @@ const getName = (name) =>
 const formatCurrency = (amount) =>
     `₹${(amount ?? 0).toLocaleString("en-IN")}`;
 
+// Pulls from the APP_URL / MAIL_USER env vars already set on Render, with safe fallbacks so links never point at the old "yoursite.com" placeholder.
+const SITE_URL = process.env.APP_URL || "https://mern-travel-agency-santosh.vercel.app";
+const SUPPORT_EMAIL = process.env.MAIL_USER || "support@travelnest.com";
+
 const buildWelcomeMessage = (name) => `\
 Hi ${getName(name)},
 
@@ -13,9 +17,9 @@ You can now browse our travel packages, make bookings, and manage \
 your trips — all in one place.
 
 Here's what you can do next:
-    • Explore Packages : https://yoursite.com/packages
-    • Complete Your Profile : https://yoursite.com/profile
-    • Contact Support : support@yoursite.com
+    • Explore Packages : ${SITE_URL}/packages
+    • Complete Your Profile : ${SITE_URL}/profile
+    • Contact Support : ${SUPPORT_EMAIL}
 
 If you have any questions, we're always here to help.
 
@@ -24,7 +28,7 @@ The Travel Agency Team
 
 ──────────────────────────────────────────
 You received this email because you registered at Travel Agency.
-If this wasn't you, please contact support@yoursite.com immediately.`;
+If this wasn't you, please contact ${SUPPORT_EMAIL} immediately.`;
 
 export const welcomeEmailTemplate = ({ name } = {}) => ({
     subject: `Welcome to Travel Agency, ${getName(name)}! 🌍 Let's plan your next adventure`,
@@ -53,11 +57,11 @@ Great news — your booking is confirmed! 🎉
 ──────────────────────────────────────────
 
 You can view your full booking details here:
-    https://yoursite.com/bookings/${bookingId ?? ""}
+    ${SITE_URL}/bookings/${bookingId ?? ""}
 
 Need to make changes or have questions?
-    • Manage Booking : https://yoursite.com/bookings/${bookingId ?? ""}
-    • Contact Support : support@yoursite.com
+    • Manage Booking : ${SITE_URL}/bookings/${bookingId ?? ""}
+    • Contact Support : ${SUPPORT_EMAIL}
 
 We look forward to making your trip unforgettable!
 
@@ -87,10 +91,10 @@ Your payment has been received successfully. ✅
 ──────────────────────────────────────────
 
 Your invoice is available here:
-    https://yoursite.com/bookings/${bookingId ?? ""}/invoice
+    ${SITE_URL}/bookings/${bookingId ?? ""}/invoice
 
 If you did not authorise this payment or need assistance:
-    • Contact Support : support@yoursite.com
+    • Contact Support : ${SUPPORT_EMAIL}
 
 Thank you for choosing Travel Agency. We can't wait to take you there!
 
@@ -125,10 +129,10 @@ Refund Information:
     If you're eligible for a refund, it will be processed within 5–7 business days to your original payment method.
 
 Ready to plan a new trip?
-    • Explore Packages : https://yoursite.com/packages
+    • Explore Packages : ${SITE_URL}/packages
 
 If you have questions about this cancellation or your refund:
-    • Contact Support : support@yoursite.com
+    • Contact Support : ${SUPPORT_EMAIL}
 
 We hope to welcome you back soon.
 
