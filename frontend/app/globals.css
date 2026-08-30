@@ -1,0 +1,243 @@
+@import "tailwindcss";
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f0f7ff;
+    color: #1e293b;
+}
+
+/* Hide default password eye icon in Edge */
+input[type="password"]::-ms-reveal {
+    display: none;
+}
+
+input[type="password"]::-ms-clear {
+    display: none;
+}
+
+input[type="password"]::-webkit-credentials-auto-fill-button {
+    display: none !important;
+    visibility: hidden;
+}
+
+/* ── Hero content entrance ───────────────────────── */
+@keyframes heroContent {
+    0% {
+        opacity: 0;
+        transform: translateY(28px) scale(0.98);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.animate-heroContent {
+    animation: heroContent 1s ease-out;
+}
+
+/* ── Shake (form validation) ─────────────────────── */
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+
+    20% {
+        transform: translateX(-6px);
+    }
+
+    40% {
+        transform: translateX(6px);
+    }
+
+    60% {
+        transform: translateX(-4px);
+    }
+
+    80% {
+        transform: translateX(4px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* ── Custom scrollbar ────────────────────────────── */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(148, 163, 184, 0.45);
+    border-radius: 9999px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(100, 116, 139, 0.65);
+}
+
+/* ── Testimonial bullets ─────────────────────────── */
+.testimonial-bullet {
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    background: rgba(249, 115, 22, 0.25);
+    transition: all 0.3s ease;
+}
+
+.testimonial-bullet-active {
+    width: 26px;
+    background: #f97316;
+}
+
+/* ── Skeleton shimmer ────────────────────────────── */
+@keyframes skeleton-shimmer {
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+.skeleton-shimmer {
+    background: linear-gradient(90deg,
+            rgba(226, 232, 240, 0.9) 0%,
+            rgba(241, 245, 249, 1) 50%,
+            rgba(226, 232, 240, 0.9) 100%);
+    background-size: 200% 100%;
+    animation: skeleton-shimmer 1.6s linear infinite;
+}
+
+/* ── Section reveal ──────────────────────────────── */
+@keyframes fade-up-soft {
+    0% {
+        opacity: 0;
+        transform: translateY(32px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.reveal-hidden {
+    opacity: 0;
+    transform: translateY(32px);
+}
+
+.reveal-visible {
+    animation: fade-up-soft 0.8s ease forwards;
+}
+
+/* ── Marquee ─────────────────────────────────────── */
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-33.333%);
+    }
+}
+
+/* ── Text selection ──────────────────────────────── */
+::selection {
+    background: rgba(249, 115, 22, 0.18);
+    color: #0f172a;
+}
+
+/* ── Mobile bg-fixed fallback ────────────────────── */
+@media (max-width: 767px) {
+    .bg-fixed-mobile-safe {
+        background-attachment: scroll !important;
+    }
+}
+
+/* ── Toast entrance ──────────────────────────────── */
+@keyframes toastIn {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.animate-toastIn {
+    animation: toastIn 0.3s ease-out;
+}
+
+/* ── Premium day-picker ──────────────────────────── */
+.premium-day-picker .rdp {
+    --rdp-cell-size: 44px;
+    --rdp-accent-color: #f97316;
+    --rdp-background-color: rgba(249, 115, 22, 0.12);
+    margin: 0 auto;
+}
+
+.premium-day-picker .rdp-months {
+    justify-content: center;
+}
+
+.premium-day-picker .rdp-month {
+    width: 100%;
+}
+
+.premium-day-picker .rdp-caption_label {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.premium-day-picker .rdp-head_cell {
+    color: #64748b;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.premium-day-picker .rdp-day {
+    border-radius: 14px;
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.premium-day-picker .rdp-day_selected,
+.premium-day-picker .rdp-day_selected:focus-visible,
+.premium-day-picker .rdp-day_selected:hover {
+    background: #f97316 !important;
+    color: white !important;
+}
+
+.premium-day-picker .rdp-day_today {
+    color: #f97316;
+    font-weight: 800;
+}
+
+.premium-day-picker .rdp-button:hover:not([disabled]):not(.rdp-day_selected) {
+    background: rgba(15, 23, 42, 0.06);
+}
+
+/* ── Hide scrollbar (category strip) ─────────────── */
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}

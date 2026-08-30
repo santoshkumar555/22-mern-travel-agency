@@ -1,0 +1,1 @@
+export { bodyParserMiddleware } from "./bodyParser.middleware.js";

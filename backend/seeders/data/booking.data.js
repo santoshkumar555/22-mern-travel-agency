@@ -1,0 +1,80 @@
+export const Scenarios = [
+    {
+        bookingStatus: "confirmed",
+        paymentStatus: "paid",
+        paymentMethod: "upi",
+        weight: 12,
+    },
+    {
+        bookingStatus: "confirmed",
+        paymentStatus: "paid",
+        paymentMethod: "card",
+        weight: 10,
+    },
+    {
+        bookingStatus: "completed",
+        paymentStatus: "paid",
+        paymentMethod: "upi",
+        weight: 9,
+    },
+    {
+        bookingStatus: "completed",
+        paymentStatus: "paid",
+        paymentMethod: "card",
+        weight: 8,
+    },
+    {
+        bookingStatus: "completed",
+        paymentStatus: "paid",
+        paymentMethod: "netbanking",
+        weight: 5,
+    },
+    {
+        bookingStatus: "pending",
+        paymentStatus: "pending",
+        paymentMethod: "upi",
+        weight: 4,
+    },
+    {
+        bookingStatus: "confirmed",
+        paymentStatus: "pending",
+        paymentMethod: "card",
+        weight: 3,
+    },
+    {
+        bookingStatus: "cancelled",
+        paymentStatus: "refunded",
+        paymentMethod: "card",
+        weight: 3,
+    },
+    {
+        bookingStatus: "cancelled",
+        paymentStatus: "refunded",
+        paymentMethod: "upi",
+        weight: 2,
+    },
+    {
+        bookingStatus: "pending",
+        paymentStatus: "failed",
+        paymentMethod: "netbanking",
+        weight: 1,
+    },
+    {
+        bookingStatus: "cancelled",
+        paymentStatus: "failed",
+        paymentMethod: "upi",
+        weight: 1,
+    },
+    {
+        bookingStatus: "confirmed",
+        paymentStatus: "paid",
+        paymentMethod: "wallet",
+        weight: 1,
+    },
+    {
+        bookingStatus: "confirmed",
+        paymentStatus: "paid",
+        paymentMethod: "cash",
+        weight: 1,
+    },
+];

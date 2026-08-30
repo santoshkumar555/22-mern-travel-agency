@@ -1,0 +1,1 @@
+export { generateOtp, getOtpExpiry } from "./otp.service.js";
