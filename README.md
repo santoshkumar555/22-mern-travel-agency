@@ -5,6 +5,8 @@ Browse destinations, hotels, and packages, book trips with secure Razorpay payme
 
 Live Link: [View Here](https://mern-travel-agency-santosh.vercel.app/)
 
+Admin Panel: [View Here](https://mern-travel-agency-santosh.netlify.app/)
+
 Screenshots:
 ![Dashboard](./docs/screenshots/dashboard.png)
 
